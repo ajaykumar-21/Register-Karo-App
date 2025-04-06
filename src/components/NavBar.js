@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-gray-100 shadow-md py-4 px-6 flex justify-between items-center pl-6 md:pl-32">
-      <div className="text-2xl font-bold text-blue-800">
-        Register <span className="text-blue-400">Karo</span>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/20 backdrop-blur-lg shadow-md px-6 py-4 flex justify-between items-center md:px-32">
+      {/* Logo */}
+      <div className="text-2xl font-extrabold text-blue-100 tracking-tight drop-shadow-sm">
+        Register <span className="text-yellow-300">Karo</span>
       </div>
 
       {/* Desktop Menu */}
