@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 function HeroSection() {
   return (
@@ -21,16 +22,29 @@ function HeroSection() {
           transition={{ duration: 0.5 }}
         >
           Register Your Business <br className="hidden sm:block" />
-          <span className="text-yellow-300">Hassle-Free</span>
+          <span className="text-yellow-300">
+            <Typewriter
+              words={["Hassle-Free", "In Minutes", "With Confidence"]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={80}
+              deleteSpeed={50}
+              delaySpeed={2000}
+            />
+          </span>
         </motion.h1>
 
-        <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto leading-relaxed">
           Simplified legal solutions to get your business up and running
           effortlessly — no paperwork headaches.
         </p>
 
         <motion.button
-          whileHover={{ scale: 1.08 }}
+          whileHover={{
+            scale: 1.07,
+            boxShadow: "0 0 0.8rem rgba(255, 255, 255, 0.4)",
+          }}
           whileTap={{ scale: 0.96 }}
           className="mt-8 px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-full shadow-xl hover:bg-yellow-300 transition-all duration-200"
         >
@@ -38,9 +52,40 @@ function HeroSection() {
         </motion.button>
       </motion.div>
 
-      {/* Background flare */}
-      <div className="absolute -top-24 -left-24 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse"></div>
-      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-pink-400 rounded-full filter blur-3xl opacity-30 z-0 animate-pulse"></div>
+      {/* Animated Blobs */}
+      <motion.div
+        className="absolute -top-24 -left-24 w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 animate-[pulse_5s_ease-in-out_infinite] z-0"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1.1 }}
+        transition={{ repeat: Infinity, duration: 6, repeatType: "mirror" }}
+      />
+      <motion.div
+        className="absolute -bottom-32 -right-32 w-80 h-80 bg-pink-400 rounded-full blur-3xl opacity-30 animate-[pulse_6s_ease-in-out_infinite] z-0"
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.1 }}
+        transition={{ repeat: Infinity, duration: 7, repeatType: "mirror" }}
+      />
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-10 z-10 flex flex-col items-center text-white"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      >
+        <svg
+          className="w-6 h-6 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span className="text-xs mt-1">Scroll Down</span>
+      </motion.div>
     </section>
   );
 }
