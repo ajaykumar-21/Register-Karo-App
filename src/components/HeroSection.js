@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white overflow-hidden">
+    <section
+      id="home"
+      className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white overflow-hidden"
+    >
       {/* Glass effect container */}
       <motion.div
         className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl max-w-3xl w-full z-10"

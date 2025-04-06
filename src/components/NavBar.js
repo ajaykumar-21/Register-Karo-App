@@ -12,7 +12,7 @@ function NavBar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-6">
-        {["services", "testimonials", "contact"].map((section) => (
+        {["home", "services", "testimonials", "contact"].map((section) => (
           <a
             key={section}
             href={`#${section}`}
@@ -36,7 +36,7 @@ function NavBar() {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-white/20 backdrop-blur-lg shadow-lg flex flex-col items-center py-6 space-y-4 z-40 md:hidden animate-fade-in-down">
-          {["services", "testimonials", "contact"].map((section) => (
+          {["home", "services", "testimonials", "contact"].map((section) => (
             <a
               key={section}
               href={`#${section}`}
