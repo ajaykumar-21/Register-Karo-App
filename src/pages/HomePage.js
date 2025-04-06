@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import HeroSection from "../components/HeroSection";
 import ServicesSection from "../components/Services";
 import Testimonials from "../components/Testimonials";
+import Contact from "../components/Contact";
 
 function HomePage() {
   return (
@@ -19,6 +20,7 @@ function HomePage() {
       <HeroSection />
       <ServicesSection />
       <Testimonials />
+      <Contact />
     </>
   );
 }
