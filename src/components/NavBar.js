@@ -27,38 +27,27 @@ function NavBar() {
       </div>
 
       {/* Mobile Hamburger Icon */}
-      <div className="md:hidden">
+      <div className="md:hidden text-white">
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-gray-100 shadow-md flex flex-col items-center z-10 md:hidden">
-          <a
-            href="#services"
-            className="py-2 font-bold text-xl text-gray-500 hover:text-gray-700"
-            onClick={() => setIsOpen(false)}
-          >
-            Services
-          </a>
-          <a
-            href="#testimonials"
-            className="py-2 font-bold text-xl text-gray-500 hover:text-gray-700"
-            onClick={() => setIsOpen(false)}
-          >
-            Testimonials
-          </a>
-          <a
-            href="#contact"
-            className="py-2 font-bold text-xl text-gray-500 hover:text-gray-700"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </a>
-          <div className="py-2 font-bold text-blue-800 hover:text-gray-700 bg-yellow-500 rounded-full p-2 px-4 my-2">
-            <span>📞 </span>+918236009230
+        <div className="absolute top-16 left-0 w-full bg-white/20 backdrop-blur-lg shadow-lg flex flex-col items-center py-6 space-y-4 z-40 md:hidden animate-fade-in-down">
+          {["services", "testimonials", "contact"].map((section) => (
+            <a
+              key={section}
+              href={`#${section}`}
+              className="text-lg font-semibold text-white hover:text-yellow-300 transition duration-200"
+              onClick={() => setIsOpen(false)}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          ))}
+          <div className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-full px-4 py-2 shadow-md transition duration-200">
+            📞 +918236009230
           </div>
         </div>
       )}
