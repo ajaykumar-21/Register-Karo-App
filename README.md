@@ -7,6 +7,7 @@ A modern, responsive, and engaging redesign of the **Register Karo** homepage us
 - **Clean & Modern UI/UX**
 - **Smooth Animations & Interactions** (Framer Motion)
 - **Mobile-First & Fully Responsive Design**
+- **Testimonial Carousel using Swiper.js**
 - **Optimized Performance & Accessibility**
 - **Reusable Component-Based Architecture**
 
@@ -14,7 +15,12 @@ A modern, responsive, and engaging redesign of the **Register Karo** homepage us
 
 - **Frontend:** React.js, Tailwind CSS
 - **Animations:** Framer Motion
+- **Carousel:** Swiper.js
 - **Deployment:** Vercel
+
+## 📦 Swiper.js Integration
+
+Swiper.js is used to implement a responsive, autoplay-enabled testimonial carousel.
 
 ## ⚙️ Installation & Setup
 
