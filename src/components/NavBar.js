@@ -11,29 +11,18 @@ function NavBar() {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex justify-between items-center">
-        <div>
+      <div className="hidden md:flex items-center space-x-6">
+        {["services", "testimonials", "contact"].map((section) => (
           <a
-            href="#services"
-            className="mx-4 font-bold text-xl text-gray-500 hover:text-gray-700"
+            key={section}
+            href={`#${section}`}
+            className="text-lg font-semibold text-white hover:text-yellow-300 transition duration-200"
           >
-            Services
+            {section.charAt(0).toUpperCase() + section.slice(1)}
           </a>
-          <a
-            href="#testimonials"
-            className="mx-4 font-bold text-xl text-gray-500 hover:text-gray-700"
-          >
-            Testimonials
-          </a>
-          <a
-            href="#contact"
-            className="mx-4 font-bold text-xl text-gray-500 hover:text-gray-700"
-          >
-            Contact
-          </a>
-        </div>
-        <div className="mx-4 font-bold text-blue-800 hover:text-gray-700 bg-yellow-500 rounded-full p-2 pr-4">
-          <span>📞 </span>+918236009230
+        ))}
+        <div className="ml-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-full px-4 py-2 shadow-md transition duration-200">
+          📞 +918236009230
         </div>
       </div>
 
